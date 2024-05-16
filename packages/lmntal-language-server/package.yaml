@@ -1,0 +1,20 @@
+---
+name: lmntal-language-server
+description: LMNtal Language Server
+homepage: https://github.com/QRWells/lmntal-language-server
+licenses:
+  - MIT License
+languages:
+  - lmntal
+categories:
+  - LSP
+
+source:
+  id: pkg:github/QRWells/lmntal-language-server@main
+  build:
+    run: |
+      cargo build
+    bin: target/debug/lmntal-language-server
+
+bin:
+  lmntal-language-server: "{{source.build.bin}}"
